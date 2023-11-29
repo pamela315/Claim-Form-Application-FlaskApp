@@ -1,0 +1,160 @@
+<html>
+<head>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HKET ADV AC002 Claim Form</title>
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0" />
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+
+         ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #484848;
+        }
+
+        li {
+          float: left;
+
+        }
+
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-family: Arial;
+          font-size:16px;
+        }
+
+        li a:hover:not(.active) {
+          background-color: #555;
+        }
+
+        .active {
+          background-color: #c02;
+        }
+
+
+
+        .content
+    	{
+    	    font-family: Arial;
+    	    font-size:36px;
+    	    margin: 0 auto;
+    	    text-align: center;
+    	}
+
+
+		.title
+	    	{
+	    	    font-family: Arial;
+	    	    font-size:36px;
+	    	    background: #32a899;
+	    	    color: #ffffff;
+	    	    padding:15px;
+	    	    text-align: center;
+	    	}
+
+
+		div
+			{
+				font-family: Arial;
+				font-size: 36px;
+			}
+
+
+		.DownloadButton
+        	{
+        		padding: 10px 15px !important;
+        		font-size: 18px !important;
+        		background-color: #32a899;
+        		font-weight: bold;
+        		color: #ffffff;
+        		border-radius: 5px;
+        		-moz-border-radius: 5px;
+        		-webkit-border-radius: 5px;
+        		cursor: pointer;
+        		margin:0 auto;
+        	}
+
+        	.data
+        	{
+        	    text-align:left;
+        	    vertical-align:top;
+                border-collapse: collapse;
+                width:100%;
+                padding: 20px 0;
+        	}
+
+        	.data td
+        	{
+        	    vertical-align:top;
+        	}
+
+
+
+        @media screen and (max-device-width: 600px) {
+            }
+    </style>
+
+</head>
+
+<body bgcolor="#defaf6">
+
+    <div class="main">
+
+	<div class="title">AC002 Record Enquiry</div>
+
+
+	<ul>
+      <li><a href="http://pamelatsui.pythonanywhere.com/">Home</a></li>
+      <li><a class="active" href="http://pamelatsui.pythonanywhere.com/enquiry/">Enquiry</a></li>
+      <li><a href="http://pamelatsui.pythonanywhere.com/edit/">Edit</a></li>
+      <li><a href="http://pamelatsui.pythonanywhere.com/delete/">Delete</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/1oty3G-CT3xvRBC3ye2GztGMfRXhOnImPopMizexgESU/edit?usp=sharing" target="_blank">Vendor</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/1ux2WOgymDOSblwh8EZL0UXJwxyVkWfrq9ojPTGBipP4/edit?usp=sharing" target="_blank">Freelance</a></li>
+    </ul>
+
+
+
+	<div style="padding:40px 15px" class="content">
+
+	<div style="padding-top:15px; text-align:left;">Vendor</div>
+
+        {% for table in V %}
+            {{ table|safe }}
+        {% endfor %}
+
+
+
+
+	<div style="padding-top:15px; text-align:left;">Freelance</div>
+        {% for table in F %}
+            {{ table|safe }}
+        {% endfor %}
+
+
+
+	<div style="padding-top:15px; text-align:left;">Staff</div>
+        {% for table in S %}
+            {{ table|safe }}
+        {% endfor %}
+
+
+
+    </div>
+
+
+	</div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<html>
+<head>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HKET ADV AC002 Claim Form</title>
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0" />
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+
+
+         ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #484848;
+        }
+
+        li {
+          float: left;
+
+        }
+
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-family: Arial;
+          font-size:16px;
+        }
+
+        li a:hover:not(.active) {
+          background-color: #555;
+        }
+
+        .active {
+          background-color: #c02;
+        }
+
+
+
+        form
+        {
+            margin: 0 auto;
+            width:600px;
+        }
+
+
+	   label,input
+	   {
+	       font-family: Arial;
+	       font-size:18px;
+	       display:inline-block;
+	   }
+
+
+		input
+			{
+				width:300px;
+				padding: 5px 0;
+			}
+
+		select
+			{
+				width:300px;
+				height:30px;
+				font-size:18px;
+			}
+
+        option
+		{
+			font-size:18px;
+		}
+
+        label
+		    {
+		        width: 200px;
+		    }
+
+
+		.item
+		    {
+                padding:15px 10px;
+		    }
+
+        #urgentdate_ALL, #otherSpecify_ALL, #Serviceother, #itemother, #calOther
+		    {
+                padding:15px 10px;
+		    }
+
+		.title
+	    	{
+	    	    font-family: Arial;
+	    	    font-size:36px;
+	    	    background: #000000;
+	    	    color: #ffffff;
+	    	    padding:15px;
+	    	    text-align: center;
+	    	}
+
+	    .submit
+	        {
+	           width:300px;
+	           margin:0 auto;
+	           padding:15px 0;
+            }
+
+        #methodlabel, #typelabel, #maillabel, #currencylabel, #urgentlabel, #callabel
+            {
+            display:inline!important;
+            }
+
+
+		.SubmitButton
+			{
+				padding: 10px 15px !important;
+				font-size: 18px !important;
+				background-color: #000000;
+				font-weight: bold;
+				color: #ffffff;
+				border-radius: 5px;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				border: 1px solid #000000;
+				cursor: pointer;
+				margin:0 auto;
+
+			}
+
+		.reference
+		    {
+		        padding-left: 215px;
+		    }
+
+
+        @media screen and (max-device-width: 600px) {
+            form {
+                width: 100% !important;
+            }
+
+            label,input
+    	   {
+    	       display:block !important;
+    	       width:100% !important;
+    	       padding: 10px 0;
+    	   }
+
+
+    	   .item
+	    	{
+	    	    padding: 10px 10px !important;
+	    	}
+
+	    	#type, #currency, #method, #urgent, #mail
+            {
+                display:inline-block !important;
+            }
+
+
+
+            .reference
+		    {
+		        padding-left: 0px !important;
+		    }
+
+        }
+    </style>
+
+</head>
+
+<body bgcolor="#e6e6e6">
+
+
+	<div class="title">AC002 Delete Record Application</div>
+
+
+	<ul>
+      <li><a href="http://pamelatsui.pythonanywhere.com/">Home</a></li>
+      <li><a href="http://pamelatsui.pythonanywhere.com/enquiry/">Enquiry</a></li>
+      <li><a href="http://pamelatsui.pythonanywhere.com/edit/">Edit</a></li>
+      <li><a class="active" href="http://pamelatsui.pythonanywhere.com/delete/">Delete</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/1oty3G-CT3xvRBC3ye2GztGMfRXhOnImPopMizexgESU/edit?usp=sharing" target="_blank">Vendor</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/1ux2WOgymDOSblwh8EZL0UXJwxyVkWfrq9ojPTGBipP4/edit?usp=sharing" target="_blank">Freelance</a></li>
+    </ul>
+
+        <div class="instruction" style="padding-top:20px;font-size:16px;font-family:Arial;">
+        Instructions:<br>
+        1) Please enter the Submission id (provided after AC002 submission or refer to AC002 Excel cell D2)<br>
+        2) Please enter your name in "Applied by", same as previous submission.<br></div>
+
+
+
+
+	<div style="padding:40px 0px">
+
+	<form action="/delete_result" method="POST">
+
+        <div class="item">
+        <label for="loginno">Submission id:<span style="color:red;">*</span></label>
+       <input type="text" name="loginno" id="loginno" required placeholder="e.g. Oct 20 - C01"/></div>
+
+
+        <div class="item">
+        <label for="appliedby">Applied by<span style="color:red;">*</span></label>
+        <input type="text" name="appliedby" id ="appliedby" required/></div>
+
+        <div class="Manda" style="padding:15px 0; font-size:12px; font-family: Arial;">
+        <span style="color:red;">*</span> Mandatory Fields</div>
+
+
+        <div class="submit">
+        <input type="submit" value="Submit" class="SubmitButton"/></div>
+
+
+	 </form>
+
+	</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+	</script>
+
+</body>
+
+</html>

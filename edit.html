@@ -1,0 +1,612 @@
+<html>
+<head>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HKET ADV AC002 Claim Form</title>
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0" />
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+
+
+         ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #484848;
+        }
+
+        li {
+          float: left;
+
+        }
+
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-family: Arial;
+          font-size:16px;
+        }
+
+        li a:hover:not(.active) {
+          background-color: #555;
+        }
+
+        .active {
+          background-color: #c02;
+        }
+
+
+
+        form
+        {
+            margin: 0 auto;
+            width:600px;
+        }
+
+
+	   label,input
+	   {
+	       font-family: Arial;
+	       font-size:18px;
+	       display:inline-block;
+	   }
+
+
+		input
+			{
+				width:300px;
+				padding: 5px 0;
+			}
+
+		select
+			{
+				width:300px;
+				height:30px;
+				font-size:18px;
+			}
+
+        option
+		{
+			font-size:18px;
+		}
+
+        label
+		    {
+		        width: 200px;
+		    }
+
+
+		.item
+		    {
+                padding:15px 10px;
+		    }
+
+        #urgentdate_ALL, #otherSpecify_ALL, #Serviceother, #itemother, #calOther, #teamsOthers
+		    {
+                padding:15px 10px;
+		    }
+
+		.title
+	    	{
+	    	    font-family: Arial;
+	    	    font-size:36px;
+	    	    background: #8e0018;
+	    	    color: #ffffff;
+	    	    padding:15px;
+	    	    text-align: center;
+	    	}
+
+	    .submit
+	        {
+	           width:300px;
+	           margin:0 auto;
+	           padding:15px 0;
+            }
+
+        #methodlabel, #typelabel, #maillabel, #currencylabel, #urgentlabel, #callabel
+            {
+            display:inline!important;
+            }
+
+
+		.SubmitButton
+			{
+				padding: 10px 15px !important;
+				font-size: 18px !important;
+				background-color: #8e0018;
+				font-weight: bold;
+				color: #ffffff;
+				border-radius: 5px;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				border: 1px solid #8e0018;
+				cursor: pointer;
+				margin:0 auto;
+
+			}
+
+		.reference
+		    {
+		        padding-left: 215px;
+		        font-size: 10px !important;
+		        font-family: Arial;
+		    }
+
+
+
+        @media screen and (max-device-width: 600px) {
+            form {
+                width: 100% !important;
+            }
+
+            label,input
+    	   {
+    	       display:block !important;
+    	       width:100% !important;
+    	       padding: 10px 0;
+    	   }
+
+
+    	   .item
+	    	{
+	    	    padding: 10px 10px !important;
+	    	}
+
+	    	#type, #currency, #method, #urgent, #mail
+            {
+                display:inline-block !important;
+            }
+
+
+
+            .reference
+		    {
+		        padding-left: 0px !important;
+		    }
+
+        }
+    </style>
+
+</head>
+
+<body bgcolor="#f7c3d0">
+
+
+	<div class="title">AC002 Request Changes Application</div>
+
+
+	<ul>
+      <li><a href="http://pamelatsui.pythonanywhere.com/">Home</a></li>
+      <li><a href="http://pamelatsui.pythonanywhere.com/enquiry/">Enquiry</a></li>
+      <li><a class="active" href="http://pamelatsui.pythonanywhere.com/edit/">Edit</a></li>
+      <li><a href="http://pamelatsui.pythonanywhere.com/delete/">Delete</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/1oty3G-CT3xvRBC3ye2GztGMfRXhOnImPopMizexgESU/edit?usp=sharing" target="_blank">Vendor</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/1ux2WOgymDOSblwh8EZL0UXJwxyVkWfrq9ojPTGBipP4/edit?usp=sharing" target="_blank">Freelance</a></li>
+    </ul>
+
+
+    <div class="instruction" style="padding-top:20px;font-size:16px;font-family:Arial;">
+        Instructions:<br>
+        1) Please enter the Submission id (provided after AC002 submission or refer to AC002 Excel cell D2)<br>
+        2) Please enter your name in "Applied by", same as previous submission.<br>
+        3) Only enter the items that you need to change.<br>
+        4) If you would like to change the Payee Type, please <a href="http://pamelatsui.pythonanywhere.com/delete/">delete</a> your records and submit again.</div>
+
+
+	<div style="padding:40px 0px">
+
+	<form action="/changes" method="POST">
+
+        <div class="item">
+        <label for="loginno">Submission id:<span style="color:red;">*</span></label>
+       <input type="text" name="loginno" id="loginno" required oninvalid="this.setCustomValidity('Please enter your login no')" oninput="this.setCustomValidity('')" placeholder="e.g. Oct 20 - C01"/></div>
+
+        <div class="item">
+        <label for="appliedby" required>Applied by<span style="color:red;">*</span></label>
+        <input type="text" name="appliedby" id ="appliedby" placeholder="e.g. Peter Chan"/></div>
+
+
+          <div class="item">
+         <label for="team">Team</label>
+          <select id="team" name="team">
+            <option value="" disabled selected>Select your option</option>
+            <option value="" disabled>--ADV--</option>
+            <option value="ADV">ADV</option>
+            <option value="" disabled>--HKET--</option>
+            <option value="HKET_Adv">HKET Adv</option>
+            <option value="iET_A">iET - A</option>
+            <option value="iET_B">iET - B</option>
+            <option value="iET_C">iET - C</option>
+            <option value="iET_D">iET - D</option>
+            <option value="iET_E">iET - E</option>
+            <option value="PET_A">PET - A</option>
+            <option value="PET_B">PET - B</option>
+            <option value="PET_C">PET - C</option>
+            <option value="PET_D">PET - D</option>
+            <option value="PET_E">PET - E</option>
+            <option value="" disabled>--SkyPost--</option>
+            <option value="SkyPost_Adv">Sky Post Adv</option>
+            <option value="Sky_Marketing">Sky Marketing</option>
+            <option value="Sky_A">Sky A</option>
+            <option value="Sky_B">Sky B</option>
+            <option value="Sky_C">Sky C</option>
+            <option value="Sky_D">Sky D</option>
+            <option value="Sky_E">Sky E</option>
+            <option value="" disabled>--U Lifestyle--</option>
+            <option value="UL">UL</option>
+            <option value="UM">UM</option>
+            <option value="UT">UT</option>
+            <option value="UFB">UFB</option>
+            <option value="UHK">UHK</option>
+            <option value="Others">Others</option>
+            <option value="" disabled>--e-zone--</option>
+            <option value="Ezone">Ezone</option>
+            <option value="" disabled>--iMoney--</option>
+            <option value="iMoney">iMoney</option>
+          </select>
+        </div>
+
+
+        <div id="teamsOthers" style="display:none;">
+        <label for="teamsOthers" width="200">UL Team - Other, Please Specify<span style="color:red;">*</span></label>
+        <input type="text" name="teamsOthers" id="teamsOthers" width="300" style="padding: 5px 0;" />
+        </div>
+
+
+
+        <div class="item">
+        <label for="payto">PayTo</label>
+       <input type="text" name="payto" id="payto"/></div>
+
+       <div class="item" id="currency">
+       <label for="currency">Currency</label>
+       <input type="radio" id="currency" name="currency" value="HKD" style="width:20px!important;"><label for="HKD" id="currencylabel" style="">HKD</label>
+       <input type="radio" id="currency" name="currency" value="USD" style="width:20px!important;padding-left:10px;"><label for="USD" id="currencylabel" style="">USD</label>
+       <input type="radio" id="currency" name="currency" value="RMB" style="width:20px!important;padding-left:10px;"><label for="RMB" id="currencylabel" style="">RMB</label>
+       </div>
+
+        <div class="item" id="amount">
+        <label for="amount">Amount $</label>
+       <input type="text" name="amount" id="amount"/></div>
+
+
+       <div class="item">
+       <label for="method">Payment Method</label>
+       <input type="radio" id="method" name="method" value="cheque" style="width:20px!important;"><label for="cheque" id="methodlabel" style="">Cheque</label>
+       <input type="radio" id="method" name="method" value="TT" style="width:20px!important;padding-left:10px;"><label for="TT" id="methodlabel" style="">T/T</label></label>
+       <input type="radio" id="method" name="method" value="other" style="width:20px!important;padding-left:10px;"><label for="other" id="methodlabel" style="">Other</label>
+       </div>
+
+        <div id="otherSpecify_ALL" style="display:none;">
+        <label for="otherSpecify" width="200">Other, Please Specify</label>
+        <input type="text" name="otherSpecify" id="otherSpecify" width="300" style="padding: 5px 0;" />
+        </div>
+
+       <div class="item">
+       <label for="mail">Mail / Send by</label>
+       <input type="radio" id="mail" name="mail" value="fin" style="width:20px!important;"><label for="fin" id="maillabel" style="">Fin</label>
+       <input type="radio" id="mail" name="mail" value="applicant" style="width:20px!important;padding-left:10px;"><label for="applicant" id="maillabel" style="">Applicant</label>
+       </div>
+
+       <div class="item">
+       <label for="urgent">Urgent</label>
+       <input type="radio" id="urgent" name="urgent" value="yes" style="width:20px!important;"><label for="yes" id="urgentlabel" style="">Yes</label>
+       <input type="radio" id="urgent" name="urgent" value="no" style="width:20px!important;padding-left:10px;"><label for="no" id="maillabel" style="">No</label>
+       </div>
+
+        <div id="urgentdate_ALL" style="display:none;">
+        <label for="urgentdate" width="200">Urgent Date</label>
+        <input type="date" name="urgentdate" id="urgentdate" width="300" style="padding: 5px 0;"/>
+        </div>
+
+       <div class="item">
+        <label for="adno">Ad No.</label>
+       <input type="text" name="adno" id="adno"/></div>
+
+
+
+        <div style="border:1px #b6b6b6 solid;">
+        <p style="padding-left:10px; font-size:18px; color:060606; font-family:Arial;">Description</p>
+        <div class="item">
+        <label for="clientname">Name of Client</label>
+       <input type="text" name="clientname" id ="clientname" style="width:300px"/></div>
+
+          <div class="item">
+            <label for="itemname">Item Name</label>
+                <select id="itemname" name="itemname">
+                <option value="" disabled selected>Select your option</option>
+                <option value="adwards">Awards</option>
+                <option value="Advertorial">Advertorial</option>
+                <option value="booklet">Booklet</option>
+                <option value="Event Management">Event Management</option>
+                <option value="Facebook">Facebook</option>
+                <option value="others">Others</option>
+             </select>
+        </div>
+
+         <div id="itemOther" style="display:none;">
+        <label for="itemOther" width="200">Other, Please Specify</label>
+        <input type="text" name="itemOther" id="itemOther" width="300" style="padding: 5px 0;"/>
+        </div>
+
+        <div class="item">
+         <label for="service">Nature of Service</label>
+          <select id="service" name="service">
+            <option value="" disabled selected>Select your option</option>
+            <option value="Helper">Helper</option>
+            <option value="Interview">Interview</option>
+            <option value="Layout Design">Layout Design</option>
+            <option value="Make Up">Make Up</option>
+            <option value="Misc">Misc</option>
+            <option value="Online Promotion">Online Promotion</option>
+            <option value="Photo Shooting">Photo Shooting</option>
+            <option value="Print">Print</option>
+            <option value="Production">Production</option>
+            <option value="Proof Read">Proof Read</option>
+            <option value="Props">Props</option>
+            <option value="Rental Fee">Rental Fee</option>
+            <option value="Talent/KOL/Model">Talent/ KOL/ Model</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Website">Website</option>
+            <option value="Writer">Writer</option>
+            <option value="others">Others</option>
+          </select>
+        </div>
+
+        <div id="ServiceOther" style="display:none;">
+        <label for="ServiceOther" width="200">Other, Please Specify</label>
+        <input type="text" name="ServiceOther" id="ServiceOther" width="300" style="padding: 5px 0;" />
+        </div>
+
+
+        <div class="item">
+        <label for="publishedDate">Published Date</label>
+        <input type="text" name="publishedDate" id="publishedDate" width="300" style="padding: 5px 0;"/>
+        </div>
+
+        <div class="reference">
+           e.g. "8 Feb 2021"  or "Feb 2021"
+       </div>
+
+
+        <div class="item">
+        <label for="details">Details</label>
+       <input type="text" name="details" id ="details" style="width:300px; height:150px;"/></div>
+
+
+
+        </div>
+
+        <div class="item">
+        <label for="vendorcode">Vendor Code</label>
+        <input type="text" name="vendorcode" id ="vendorcode"/></div>
+
+        <div class="reference">
+           <a href="https://docs.google.com/spreadsheets/d/1oty3G-CT3xvRBC3ye2GztGMfRXhOnImPopMizexgESU/edit?usp=sharing" style="font-family:Arial;" target="_blank">Vendor Code List</a>
+       </div>
+
+       <div style="padding-top:5px;" class="reference">
+           <a href="https://docs.google.com/spreadsheets/d/1ux2WOgymDOSblwh8EZL0UXJwxyVkWfrq9ojPTGBipP4/edit?usp=sharing" style="font-family:Arial;" target="_blank">Freelance Code List</a>
+       </div>
+
+        <div class="item">
+        <label for="extno">Extension No</label>
+        <input type="text" name="extno" id="extno"/></div>
+
+
+
+
+
+        <div style="border:1px #b6b6b6 solid; display:none;" id="form2">
+        <p style="padding-left:10px; font-size:18px; color:060606; font-family:Arial;">外判服務申請表</p>
+
+        <div class="item">
+        <label for="f_reason">申請原因</label>
+        <input type="text" name="f_reason" id ="f_reason"  /></div>
+
+       <div class="item">
+        <label for="f_deadline">完工限期</label>
+        <input type="text" name="f_deadline" id ="f_deadline"  /></div>
+
+       <div class="item">
+        <label for="f_chinesename">承判人姓名(中文)</label>
+        <input type="text" name="f_chinesename" id ="f_chinesename"  /></div>
+
+       <div class="item">
+        <label for="f_engname">承判人姓名(英文)</label>
+        <input type="text" name="f_engname" id ="f_engname" /></div>
+
+       <div class="item">
+        <label for="f_date">外判工作日期</label>
+        <input type="date" name="f_date" id="f_date" width="300" style="padding: 5px 0;"/></div>
+
+       <div class="item">
+       <label for="f_cal">外判服務費計算</label>
+       <input type="radio" id="f_cal" name="f_cal" value="hour" style="width:20px!important;"><label for="hour" id="callabel" style="">按時間</label>
+       <input type="radio" id="f_cal" name="f_cal" value="job" style="width:20px!important;padding-left:10px;"><label for="job" id="callabel" style="">按工作</label></label>
+       <input type="radio" id="f_cal" name="f_cal" value="other" style="width:20px!important;padding-left:10px;"><label for="other" id="callabel" style="">其他</label>
+        </div>
+
+
+       <div id="calOther" style="display:none;">
+        <label for="calOther" width="200">其他 (請註明)</label>
+        <input type="text" name="calOther" id="calOther" width="300" style="padding: 5px 0;"/>
+        </div>
+
+        </div>
+
+        <div class="Manda" style="padding:15px 0; font-size:12px; font-family: Arial;">
+        <span style="color:red;">*</span> Mandatory Fields</div>
+
+
+        <div class="submit">
+        <input type="submit" value="Submit" class="SubmitButton"/></div>
+
+	 </form>
+
+	</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+
+
+
+	 /* $("input[name=amount]").on('input', function () {
+        this.value = this.value.match(/^\d+\.?\d{0,2}/);
+      });*/
+
+
+
+	 $("input[name=currency]").change(function(){
+
+
+       if($("input[name=currency]").checked = true)
+       {
+          $("#amount").find(':input').attr('required', true);
+       }
+       else
+        {
+          $("#amount").find(':input').attr('required', false);
+       }
+
+
+	 });
+
+
+	 $("input[name=amount]").change(function(){
+
+       if($("input[name=amount]")  != "")
+       {
+          $("#currency").find(':input').attr('required', true);
+       }
+       else
+       {
+          $("#currency").find(':input').attr('required', false);
+       }
+
+	 });
+
+
+
+
+	 $("input[name=method]").change(function(){
+
+       if($(this).val()=="other")
+       {
+          $("#otherSpecify_ALL").show();
+          $("#otherSpecify_ALL").find(':input').attr('required', true);
+       }
+       else
+       {
+           $("#otherSpecify_ALL").hide();
+           $("#otherSpecify_ALL").find(':input').attr('required', false);
+       }
+
+    });
+
+    $("input[name=urgent]").change(function(){
+
+       if($(this).val()=="yes")
+       {
+          $("#urgentdate_ALL").show();
+          $("#urgentdate_ALL").find(':input').attr('required', true);
+       }
+       else
+       {
+           $("#urgentdate_ALL").hide();
+           $("#urgentdate_ALL").find(':input').attr('required', false);
+       }
+
+    });
+
+
+    $("select[name=service]").change(function(){
+
+       if($(this).val()=="others")
+       {
+          $("#ServiceOther").show();
+          $("#ServiceOther").find(':input').attr('required', true);
+       }
+       else
+       {
+           $("#ServiceOther").hide();
+           $("#ServiceOther").find(':input').attr('required', false);
+       }
+
+    });
+
+
+        $("select[name=itemname]").change(function(){
+
+       if($(this).val()=="others")
+       {
+          $("#itemOther").show();
+          $("#itemOther").find(':input').attr('required', true);
+       }
+       else
+       {
+           $("#itemOther").hide();
+           $("#itemOther").find(':input').attr('required', false);
+       }
+
+    });
+
+
+        $("input[name=loginno]").change(function(){
+
+       if($(this).val().includes(" - F"))
+       {
+          $("#form2").show();
+       }
+       else
+       {
+           $("#form2").hide();
+       }
+
+    });
+
+
+    	$("input[name=f_cal]").change(function(){
+
+       if($(this).val()=="other")
+       {
+          $("#calOther").show();
+          $("#calOther").find(':input').attr('required', true);
+       }
+       else
+       {
+           $("#calOther").hide();
+           $("#calOther").find(':input').attr('required', false);
+       }
+
+    });
+
+      $("select[name=team]").change(function(){
+
+       if($(this).val()=="Others")
+       {
+          $("#teamsOthers").show();
+          $("#teamsOthers").find(':input').attr('required', true);
+       }
+       else
+       {
+           $("#teamsOthers").hide();
+           $("#teamsOthers").find(':input').attr('required', false);
+       }
+
+    });
+
+
+
+
+	</script>
+
+</body>
+
+</html>
