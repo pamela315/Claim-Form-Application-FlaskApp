@@ -5,7 +5,7 @@ Created on: Mar 2021
 The "Claim Form Application Flaskapp" is a web-based application built using the Flask framework. It is designed to replace the traditional excel form fill-in experience, and streamline the process of submitting and managing claim forms.
 This project also aims to provide a user-friendly and efficient solution for handling claim forms by leveraging the power of Flask. By using Flask, the application offers a flexible and customizable platform to create, submit, enquiry, delete and track claim forms, reducing manual paperwork and improving overall efficiency.
 
-##Key Features:
+## Key Features:
 
 - **Form Creation:** It provides an intuitive interface to define form fields such as date, claim reason, department, service nature, and any additional information necessary for submitting claims.
 
